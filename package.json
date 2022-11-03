@@ -1,0 +1,23 @@
+{
+  "name": "repo2",
+  "version": "1.0.0",
+  "description": "update_push_git_repo1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mitraksh/repo2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mitraksh/repo2/issues"
+  },
+  "homepage": "https://github.com/mitraksh/repo2#readme",
+  "dependencies": {
+    "run-git-command": "^1.2.3",
+    "simple-git": "^3.14.1"
+  }
+}
