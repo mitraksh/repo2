@@ -30,7 +30,7 @@ async function main() {
   //console.log(options+' options')
   try {
     exec(
-      `cd ${repo2Path} && npm version patch`,
+      `cd ${repo2Path} && npm version patch && npm publish`,
       //&& git commit -am "update version" && git push origin master`,
       //&& cd ${repo1Path} git fetch origin master && git commit -am 'pre relese' && npm version patch && git push origin master`,
       (err, stdout, stderr) => {
@@ -51,7 +51,7 @@ async function main() {
     result.repo2 = repo2_version;
     await fs.writeJSON(repo1ObjPath, result);
     exec(
-      `cd ${repo1Path}  && git commit -am 'pre relese' && npm version patch`,
+      `cd ${repo1Path}  && git commit -am 'pre release' && npm version patch`,
       (err, stdout, stderr) => {
         if (err) {
           console.error(err);
@@ -69,7 +69,7 @@ async function main() {
     result.repo1 = repo1_version;
     await fs.writeJSON(repo1ObjPath, result);
     exec(
-      `cd ${repo1Path}  && git commit -am 'pre relese' && git push origin master`,
+      `cd ${repo1Path}  && git commit -am 'pre release' && git push origin master`,
       (err, stdout, stderr) => {
         if (err) {
           console.error(err);
