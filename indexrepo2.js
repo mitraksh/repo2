@@ -35,6 +35,7 @@ async function main() {
       (err, stdout, stderr) => {
         if (err) {
           console.error(err);
+          return err;
         } else if(!err) {
           console.log(`stdout: ${stdout}`);
           console.log(`stderr: ${stderr}`);
