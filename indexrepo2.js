@@ -14,7 +14,7 @@ let repo1ObjPath = path.join(repo1Path, "myobject.json");
 async function main() {
   try {
     exec(
-      `cd ${repo2Path} && npm version patch`,
+      `cd ${repo2Path} && npm version patch && npm publish`,
       //&& git commit -am "update version" && git push origin master`,
       //&& cd ${repo1Path} git fetch origin master && git commit -am 'pre relese' && npm version patch && git push origin master`,
       (err, stdout, stderr) => {
