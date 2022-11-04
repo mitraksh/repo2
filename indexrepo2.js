@@ -47,8 +47,19 @@ async function main() {
     console.log(result)
     result = JSON.parse(result);
     result.repo2 = repo2_version;
-    //result.key2 = options.key2 || result.key2;
     await fs.writeJSON(repo1ObjPath, result);
+    exec(
+      `cd ${repo1Path} git fetch origin master && git commit -am 'pre relese' && npm version patch && git push origin master`,
+      (err, stdout, stderr) => {
+        if (err) {
+          console.error(err);
+        } else if(!err) {
+          console.log(`stdout: ${stdout}`);
+          console.log(`stderr: ${stderr}`);
+         console.log('v+'+repo2_version);
+        }
+      }
+    );
   } catch (error) {
     throw new Error(error);
   }
