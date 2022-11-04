@@ -29,7 +29,7 @@ async function main() {
   //console.log(options+' options')
   try {
     exec(
-      `cd ${repo2Path} npm version patch`,
+      `cd ${repo2Path} && npm version patch`,
       //&& git commit -am "update version" && git push origin master`,
       //&& cd ${repo1Path} git fetch origin master && git commit -am 'pre relese' && npm version patch && git push origin master`,
       (err, stdout, stderr) => {
