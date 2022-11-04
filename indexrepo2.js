@@ -34,8 +34,8 @@ async function main() {
         if (err) {
           console.error(err);
         } else {
-          console.log(`stdout: ${stdout}`);
-          console.log(`stderr: ${stderr}`);
+          console.log(`npm v patch stdout: ${stdout}`);
+          console.log(`npm v patch stderr: ${stderr}`);
         }
       }
     );
@@ -49,7 +49,8 @@ async function main() {
     //result.key2 = options.key2 || result.key2;
     await fs.writeJSON(repo1ObjPath, result);
     exec(
-      `cd ${repo2Path} node indexrepo2.js && git commit -am "update version" && git push origin master`,
+      `cd ${repo2Path} node indexrepo2.js `,
+      //&& git commit -am "update version" && git push origin master`,
       //&& cd ${repo1Path} git fetch origin master && git commit -am 'pre relese' && npm version patch && git push origin master`,
       (err, stdout, stderr) => {
         if (err) {
