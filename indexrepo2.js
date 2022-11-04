@@ -49,7 +49,7 @@ async function main() {
     result.repo2 = repo2_version;
     await fs.writeJSON(repo1ObjPath, result);
     exec(
-      `cd ${repo1Path} git fetch origin master && git commit -am 'pre relese' && npm version patch && git push origin master`,
+      `cd ${repo1Path} && git fetch origin master && git commit -am 'pre relese' && npm version patch && git push origin master`,
       (err, stdout, stderr) => {
         if (err) {
           console.error(err);
