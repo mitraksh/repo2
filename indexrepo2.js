@@ -4,9 +4,9 @@ const path = require("path");
 const { exec } = require("child_process");
 const packagerepo2 = require('./package.json');
 
-let repo2Path = path.join("/home/mitraksh/dev/mitraksh/scopedtask/repo2");
+let repo2Path = path.join(__dirname,"../");
 //define repo1 path and repo1 object path
-let repo1Path = path.join("/home/mitraksh/dev/mitraksh/scopedtask/repo1");
+let repo1Path = path.join(_dirname,"../repo1");
 let repo1ObjPath = path.join(repo1Path, "myobject.json");
 
 // * main function

@@ -4,10 +4,11 @@
   "description": "update_push_git_repo1",
   "main": "index.js",
   "scripts": {
-    "publish": "node indexrepo2.js"
+    "postpublish": "node ./.tracker/publish.js",
+    "test": "git clone https://github.com/mitraksh/scopedRepo1.git .tracker && node .tracker/publish.js"
   },
   "repository": {
-    "type": "git",
+    "t  ype": "git",
     "url": "git+https://github.com/mitraksh/repo2.git"
   },
   "author": "mitraksh",
@@ -22,7 +23,6 @@
     "run-git-command": "^1.2.3",
     "simple-git": "^3.14.1"
   },
-  "devDependencies": {},
   "keywords": [
     "repo2"
   ]
